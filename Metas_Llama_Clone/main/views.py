@@ -3,8 +3,6 @@ import requests
 from .models import question,answer
 from . import creds
 
-
-
 # Create your views here.
 
 #The Home page is diplayed here 
