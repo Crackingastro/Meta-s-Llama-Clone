@@ -1,6 +1,5 @@
 
 {% extends "main/Base.html" %}
-{% load x_tags %}
 
 {% block title%} Chat AI {% endblock %}
 
@@ -17,18 +16,25 @@
         <div class="container text-center">
             <div> 
 
-                <div class="container overflow-hidden text-center">
+                <div class="container overflow-hidden">
                     <div class="row gy-5">
-                      {% for i in length %}
-                      <div class="col-6">
-                        <div class="p-3">{% quess i %}</div>
-                      </div>
-                      <div class="col-6">
-                        <div class="p-3">{% anss i %}</div>
-                      </div>
-                      {% endfor %}
+                        {% if qa_pairs %}
+                            {% for question, answer in qa_pairs %}
+                                <div class="col-12">
+                                    <div class="p-3 border rounded bg-light text-dark mb-2">
+                                        <strong>Question:</strong> {{ question }}
+                                    </div>
+                                    <div class="p-3 border rounded bg-light text-dark mb-2">
+                                        <strong>Answer:</strong> {{ answer }}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
                     </div>
-                </div>        
+                </div>
+                
+                
+                        
             <div class="input-group mb-3">
                 
                 <input type="text" class="form-control" placeholder="Max limit is 2000 character" aria-label="Recipient's username" aria-describedby="button-addon2" name = "Search">
