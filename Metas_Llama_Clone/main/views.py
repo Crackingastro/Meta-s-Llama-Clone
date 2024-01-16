@@ -4,11 +4,6 @@ import g4f
 # Create your views here.
 
 #The Home page is diplayed here 
-def home(response):
-    return render(response, "main/home.html", {})
-
-def image_to_text(response):
-    return render(response, "main/image_to_text.html", {})
 
 def chat_gpt(request):
     if request.method == "POST":       

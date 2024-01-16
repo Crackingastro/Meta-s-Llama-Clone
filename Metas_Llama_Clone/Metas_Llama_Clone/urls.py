@@ -21,7 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include("main.urls")),
     path('home/',include("main.urls")),
-    path('image_to_text/',include("main.urls")),
     path('chat_gpt/',include("main.urls")),
   
 ]
